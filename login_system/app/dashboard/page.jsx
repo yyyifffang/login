@@ -2,7 +2,7 @@
 
 import React,{useEffect, useState} from "react";
 import { useSelector } from "react-redux";
-import { fetchMockData } from "../services/loginServices";
+import { fetchMockData } from "./service";
 import '@/app/globals.css'
 
 const DashboardPage = () => {

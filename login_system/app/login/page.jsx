@@ -4,7 +4,7 @@ import React,{useState} from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import { login } from "../features/authSlice";
-import { loginService } from "../services/loginServices";
+import { loginService } from "./service";
 import '@/app/globals.css'
 
 const LoginPage = () => {
