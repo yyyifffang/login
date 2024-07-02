@@ -1,28 +1,12 @@
 'use client';
 
 import React,{useState} from "react";
-import { useDispatch } from "react-redux";
-import { useRouter } from "next/navigation";
-import { login } from "../features/authSlice";
-import { loginService } from "./service";
+import useLogin from "./service";
 import '@/app/globals.css'
 
 const LoginPage = () => {
-    const [username, setUsername] = useState('');
-    const [password,setPassword] = useState('');
-    const dispatch = useDispatch();
-    const router = useRouter();
-
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        try{
-            const user = await loginService(username,password);
-            dispatch(login(user));
-            router.push('/dashboard');
-        }catch(error) {
-            console.error('Login failed : ', error);
-        }
-    };
+    //從userLogin hook中解構出狀態和方法
+    const {username,setUsername,password,setPassword,handleLogin} = useLogin();
 
     return(
         <div 
